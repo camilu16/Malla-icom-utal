@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Ingeniería Comercial</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #b30059;
+    }
+    .semestre {
+      margin-bottom: 2rem;
+    }
+    .semestre h2 {
+      color: #cc0066;
+      border-bottom: 2px solid #cc0066;
+      padding-bottom: 0.3rem;
+    }
+    .ramos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .ramo {
+      background-color: white;
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+    .ramo:hover {
+      transform: scale(1.02);
+    }
+    .ramo.aprobado {
+      background-color: #f8d7da;
+      text-decoration: line-through;
+    }
+    .ramo.aprobado::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-top: 3px solid red;
+      transform: rotate(-45deg);
+      pointer-events: none;
+    }
+    .creditos {
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+    .acumulado {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #800040;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Curricular - Ingeniería Comercial</h1>
+
+  <div class="semestre">
+    <h2>Semestre 1</h2>
+    <div class="ramos">
+      <div class="ramo" onclick="toggleAprobado(this)">
+        Matemáticas<br><span class="creditos">12 créditos</span>
+      </div>
+      <div class="ramo" onclick="toggleAprobado(this)">
+        Administración<br><span class="creditos">12 créditos</span>
+      </div>
+      <div class="ramo" onclick="toggleAprobado(this)">
+        Contabilidad<br><span class="creditos">12 créditos</span>
+      </div>
+      <div class="ramo" onclick="toggleAprobado(this)">
+        Economía<br><span class="creditos">10 créditos</span>
+      </div>
+      <div class="ramo" onclick="toggleAprobado(this)">
+        Comunicación Oral y Escrita I<br><span class="creditos">2 créditos</span>
+      </div>
+      <div class="ramo" onclick="toggleAprobado(this)">
+        Inglés I<br><span class="creditos">3 créditos</span>
+      </div>
+      <div class="ramo" onclick="toggleAprobado(this)">
+        Taller de Ofimática<br><span class="creditos">2 créditos</span>
+      </div>
+    </div>
+    <div class="acumulado">Créditos acumulados: 53</div>
+  </div>
+
+  <script>
+    function toggleAprobado(element) {
+      element.classList.toggle('aprobado');
+    }
+  </script>
+</body>
+</html>
